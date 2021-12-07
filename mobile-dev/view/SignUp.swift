@@ -9,22 +9,25 @@ import SwiftUI
 
 struct SignUp: View {
     @ObservedObject var signUpModel = SignUpModel()
+    enum Constant {
+        static let emptyError = ""
+    }
     
     var body: some View {
         VStack {
-            SignField(placeholder: SignPlaceholders.firstName.rawValue, text: $signUpModel.firstName, error: signUpModel.errors["firstName"] ?? SignPlaceholders.emptyErrorMessage.rawValue)
+            SignField(type: .firstName, text: $signUpModel.firstName, error: signUpModel.errors["firstName"] ?? Constant.emptyError)
             
-            SignField(placeholder: SignPlaceholders.lastName.rawValue, text: $signUpModel.lastName, error: signUpModel.errors["lastName"] ?? SignPlaceholders.emptyErrorMessage.rawValue)
+            SignField(type: .lastName, text: $signUpModel.lastName, error: signUpModel.errors["lastName"] ?? Constant.emptyError)
             
-            SignField(placeholder: SignPlaceholders.email.rawValue, text:
-                $signUpModel.email, error: signUpModel.errors["email"] ?? SignPlaceholders.emptyErrorMessage.rawValue)
+            SignField(type: .email, text:
+                $signUpModel.email, error: signUpModel.errors["email"] ?? Constant.emptyError)
             
-            SignField(placeholder: SignPlaceholders.phone.rawValue, text:
-                $signUpModel.phone, error: signUpModel.errors["phone"] ?? SignPlaceholders.emptyErrorMessage.rawValue)
+            SignField(type: .phone, text:
+                $signUpModel.phone, error: signUpModel.errors["phone"] ?? Constant.emptyError)
             
-            SignField(placeholder: SignPlaceholders.password.rawValue, text: $signUpModel.password, error: signUpModel.errors["password"] ?? SignPlaceholders.emptyErrorMessage.rawValue)
+            SignField(type: .password, text: $signUpModel.password, error: signUpModel.errors["password"] ?? Constant.emptyError)
             
-            SignField(placeholder: SignPlaceholders.confirmPassword.rawValue, text: $signUpModel.confirmPassword, error: signUpModel.errors["password"] ?? SignPlaceholders.emptyErrorMessage.rawValue)
+            SignField(type: .confirmPassword, text: $signUpModel.confirmPassword, error: signUpModel.errors["password"] ?? Constant.emptyError)
             
             Spacer()
             

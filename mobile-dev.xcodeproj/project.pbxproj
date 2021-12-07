@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0439D0DF27563EFB00344809 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439D0D727563EFB00344809 /* SignUp.swift */; };
+		0439D0E027563EFB00344809 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439D0D927563EFB00344809 /* SignUpModel.swift */; };
+		0439D0E127563EFB00344809 /* SignField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439D0DB27563EFB00344809 /* SignField.swift */; };
+		0439D0E227563EFB00344809 /* SignFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439D0DC27563EFB00344809 /* SignFieldType.swift */; };
+		0439D0E327563EFB00344809 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439D0DE27563EFB00344809 /* ValidationService.swift */; };
 		04F16F412704F37B00C388CD /* mobile_devApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F16F402704F37B00C388CD /* mobile_devApp.swift */; };
-		04F16F432704F37B00C388CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F16F422704F37B00C388CD /* ContentView.swift */; };
 		04F16F452704F37E00C388CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F16F442704F37E00C388CD /* Assets.xcassets */; };
 		04F16F482704F37E00C388CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F16F472704F37E00C388CD /* Preview Assets.xcassets */; };
 		04F16F522704F37E00C388CD /* mobile_devTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F16F512704F37E00C388CD /* mobile_devTests.swift */; };
@@ -34,9 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0439D0D727563EFB00344809 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		0439D0D927563EFB00344809 /* SignUpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		0439D0DB27563EFB00344809 /* SignField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignField.swift; sourceTree = "<group>"; };
+		0439D0DC27563EFB00344809 /* SignFieldType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignFieldType.swift; sourceTree = "<group>"; };
+		0439D0DE27563EFB00344809 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		04F16F3D2704F37B00C388CD /* mobile-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F16F402704F37B00C388CD /* mobile_devApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_devApp.swift; sourceTree = "<group>"; };
-		04F16F422704F37B00C388CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04F16F442704F37E00C388CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04F16F472704F37E00C388CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04F16F4D2704F37E00C388CD /* mobile-devTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile-devTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +79,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0439D0D627563EFB00344809 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				0439D0D727563EFB00344809 /* SignUp.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		0439D0D827563EFB00344809 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				0439D0D927563EFB00344809 /* SignUpModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		0439D0DA27563EFB00344809 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				0439D0DB27563EFB00344809 /* SignField.swift */,
+				0439D0DC27563EFB00344809 /* SignFieldType.swift */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		0439D0DD27563EFB00344809 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				0439D0DE27563EFB00344809 /* ValidationService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		04F16F342704F37B00C388CD = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				04F16F402704F37B00C388CD /* mobile_devApp.swift */,
-				04F16F422704F37B00C388CD /* ContentView.swift */,
+				0439D0D627563EFB00344809 /* view */,
+				0439D0DD27563EFB00344809 /* service */,
+				0439D0D827563EFB00344809 /* model */,
+				0439D0DA27563EFB00344809 /* component */,
 				04F16F442704F37E00C388CD /* Assets.xcassets */,
 				04F16F462704F37E00C388CD /* Preview Content */,
 			);
@@ -257,8 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F16F432704F37B00C388CD /* ContentView.swift in Sources */,
+				0439D0DF27563EFB00344809 /* SignUp.swift in Sources */,
+				0439D0E227563EFB00344809 /* SignFieldType.swift in Sources */,
+				0439D0E327563EFB00344809 /* ValidationService.swift in Sources */,
+				0439D0E127563EFB00344809 /* SignField.swift in Sources */,
 				04F16F412704F37B00C388CD /* mobile_devApp.swift in Sources */,
+				0439D0E027563EFB00344809 /* SignUpModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,29 +8,29 @@
 import SwiftUI
 
 struct SignField: View {
-    var placeholder: String = ""
+    var type: SignFieldType = .undefined
     var text: Binding<String> = .constant("")
     var error: String = ""
     
     var body: some View {
 
-        switch placeholder {
-        case SignPlaceholders.password.rawValue, SignPlaceholders.confirmPassword.rawValue:
-            SecureField(placeholder, text: text)
+        switch type {
+        case .password, .confirmPassword:
+            SecureField(type.rawValue, text: text)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
-        case SignPlaceholders.phone.rawValue:
-            TextField(placeholder, text: text)
+        case .phone:
+            TextField(type.rawValue, text: text)
                 .keyboardType(.phonePad)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
-        case SignPlaceholders.email.rawValue:
-            TextField(placeholder, text: text)
+        case .email:
+            TextField(type.rawValue, text: text)
                 .keyboardType(.emailAddress)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
         default:
-            TextField(placeholder, text: text)
+            TextField(type.rawValue, text: text)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
         }
