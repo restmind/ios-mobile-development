@@ -8,7 +8,7 @@
 import Foundation
 
 
-class SignUpModel: ObservableObject {
+class SignUpModel: ObservableObject, Identifiable {
     @Published var firstName: String = ""
     @Published var lastName: String = ""
     @Published var email: String = ""
@@ -17,8 +17,20 @@ class SignUpModel: ObservableObject {
     @Published var confirmPassword: String = ""
     var errors = [String: String]()
     
+
+    
+    func toEmptyModel() {
+        self.firstName = ""
+        self.lastName = ""
+        self.email = ""
+        self.phone = ""
+        self.password = ""
+        self.confirmPassword = ""
+    }
+    
     func validate() {
         ValidationService.validate(form: self)
     }
+
     
 }
