@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignUp: View {
+struct SignUpView: View {
     @ObservedObject var signUpModel = SignUpModel()
     enum Constant {
         static let emptyError = ""
@@ -33,6 +33,11 @@ struct SignUp: View {
             
             Button{
                 signUpModel.validate()
+                if (signUpModel.errors.isEmpty) {
+                    let newUser = User(signUpModel: signUpModel)
+                    UserService.save(newUser: newUser)
+                    signUpModel.toEmptyModel()
+                }
             }label: {
                 Text("Submit")
                     .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
@@ -52,6 +57,6 @@ struct SignUp: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUp()
+        SignUpView()
     }
 }
