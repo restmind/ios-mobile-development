@@ -14,6 +14,5 @@ class ImageMetaData: Codable, Identifiable {
     var price: String
     var image: String
     var url: String?
-    
  }
 

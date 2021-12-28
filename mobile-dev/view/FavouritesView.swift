@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct FavouritesView: View {
-    @State var images = ImageService.getAll()!
+    @State var favouritesImages: [LikedImageModel]
     var body: some View {
-        if images.isEmpty {
-            Text("No images found")
-        }else {
             Group {
                 if #available(iOS 15.0, *) {
-                    List(images) { image in
+                    List(favouritesImages) { image in
                         VStack{
                             Text("\(image.title)")
                                 .font(.title)
@@ -31,20 +28,22 @@ struct FavouritesView: View {
                             
                         }
                     }.refreshable {
-                        images = ImageService.getAll()!
+                        ImageService.buffImages = ImageService.getAll()!
+                        favouritesImages = ImageService.buffImages
+                        
                     }
-                } else {
-                    // Fallback on earlier versions
                 }
-            
+            }
+            .onAppear {
+                ImageService.buffImages = ImageService.getAll()!
+                favouritesImages = ImageService.buffImages
             }
 
         }
-    }
 }
 
 struct FavouritesView_Previews: PreviewProvider {
     static var previews: some View {
-        FavouritesView()
+        FavouritesView(favouritesImages: ImageService.buffImages)
     }
 }

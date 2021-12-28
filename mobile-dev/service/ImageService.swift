@@ -12,6 +12,7 @@ struct ImageService {
     static let key = "images"
     static private var encoder = JSONEncoder()
     static private var decoder = JSONDecoder()
+    static var buffImages = getAll()!
 
 
     static func getAll() -> [LikedImageModel]? {
@@ -30,6 +31,7 @@ struct ImageService {
              }
             
             persisted[newImage.image] = try encoder.encode(newImage)
+            buffImages.append(newImage)
             imagesDefaults.set(persisted, forKey: key)
         }
         catch {
